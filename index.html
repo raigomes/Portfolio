@@ -4,33 +4,35 @@
 	<title>Rai Gomes: Portfolio Pessoal</title>	
 	<link rel="stylesheet" href="css/estilo.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">		
+	<meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
-<body>
-	<nav id="menu" class="navbar navbar-default">
+<body>	
+	<nav id="menu" class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a href="#">			
-					<img id="logo" src="https://images.vexels.com/media/users/3/128080/isolated/lists/ba993e973cf5536cc3a2867c860f4f51-copo-de-ch-quente.png" width="24" height="24" />			
-				</a>	
+				<a href="#"><img id="logo" src="img/cafe.png"/></a>			
+				<button class="navbar-toggle" data-toggle="collapse" data-target="#menu-itens" aria-expanded="false">Menu</button>				
 			</div>
-			<ul class="nav navbar-nav">
-				<li><a href="#">Sobre</a></li>
-				<li><a href="#">Portfolio</a></li>
-				<li><a href="#">Contato</a></li>
-			</ul>
+			<div id="menu-itens" class="navbar-collapse collapse" aria-expanded="false">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Sobre</a></li>
+					<li><a href="#">Portfolio</a></li>
+					<li><a href="#">Contato</a></li>
+				</ul>
+			</div>
 		</div>
 	</nav>
 	<div class="container">
-		<section id="sobre" class="row">
-			<div id="sobre-descricao" class="col-md-8">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium similique, enim at iste est reprehenderit, deserunt recusandae labore iure ad voluptate numquam aliquid soluta aperiam, distinctio blanditiis dolorem debitis hic!
+		<section id="sobre">			
+			<div id="sobre-photo">
+				<img src="img/Rai.jpg" class="img-circle img-responsive"/>
 			</div>
-			<div id="sobre-photo" class="col-md-4">
-				<img src="https://pbs.twimg.com/profile_images/614649957879021568/UcwL41cw.jpg" alt="Rai" class="img-circle img-responsive">
+			<div id="sobre-descricao">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium similique, enim at iste est reprehenderit, deserunt recusandae labore iure ad voluptate numquam aliquid soluta aperiam, distinctio blanditiis dolorem debitis hic!</p>
 			</div>
 		</section>
 		<section id="portfolio">
-			<h2>Portfolio</h2>			
+			<h1>Portfolio</h1>
 			<div class="row">
 				<div class="col-md-6">
 					<div class="thumbnail"><a href="https://github.com/raigomes">

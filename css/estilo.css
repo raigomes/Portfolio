@@ -1,13 +1,69 @@
-#menu-itens {
-	text-align: right;
+body {
+	background-image: url("../img/grunge-background.jpg");
 }
 
-#sobre-photo {
-	height: 20%;	
+p {
+	font-size: 24px;
+	color: gray;
+	text-align: justify;
+	vertical-align: middle;
+}
+
+h1 {
+	color: #fff !important;
+	font-weight: bold !important;
+	text-align: center;
+}
+
+section {
+	padding: 5%;
+	margin: 0;	
 }
 
 img {
 	display: inline-block;
+}
+
+div.row > div {
+	padding-bottom: 5%;
+}
+
+label {
+	color: #fff;
+}
+
+/* Menu */
+a.navbar-brand {
+	padding: 0;
+}
+
+a.navbar-brand > span {
+	font-size: 24px;
+	color: gray;	
+	text-align: justify;
+}
+
+div#menu-itens {
+	text-align: right;
+}
+
+img#logo {
+	padding-bottom: -5%; 
+}
+
+/* Sobre */
+section#sobre {
+	padding-top: 25%;	
+}
+
+div#sobre-photo {
+	height: 20%;	
+}
+
+/* Portfolio */
+section#portfolio {
+	background-image: url("../img/black-background.jpg");
+	width: 100%;
 }
 
 img.port-img {	
@@ -20,14 +76,17 @@ figcaption.port-caption {
 	text-align: center;	
 }
 
-p {
-	font-size: 48px;
+/* Contato */
+section#contato {
+	background-image: url("../img/black-background.jpg");
+	width: 100%;
 }
 
-h1 {
+div.form>textarea {
+	width: 100%;
+}
+
+div.form>input {
 	text-align: center;
-}
-
-section {
-	margin:10%;
+	
 }

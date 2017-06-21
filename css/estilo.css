@@ -90,3 +90,9 @@ div.form>input {
 	text-align: center;
 	
 }
+
+.btn-linkedin {
+	background-color: #0077B5;
+	color: #fff;
+ 	border-color: #2e6da4;
+}

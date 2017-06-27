@@ -57,8 +57,17 @@ section#sobre {
 	padding-top: 25%;	
 }
 
-div#sobre-photo {
+#sobre-photo {
 	height: 20%;	
+}
+
+#sobre-skills {
+	color: #fff;
+}
+
+.row-icon {
+	font-size: 5rem;
+	text-align: center;
 }
 
 /* Portfolio */

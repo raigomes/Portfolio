@@ -83,10 +83,14 @@ section#contato {
 	width: 100%;
 }
 
+.form {
+	width: 100%;
+}
+/*
 div.form>textarea {
 	width: 100%;
 }
-
+*/
 div.form>input {
 	text-align: center;
 	

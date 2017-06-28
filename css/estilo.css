@@ -1,11 +1,12 @@
 
 body {
 	background-image: url("../img/grunge-background.jpg");
+	width: 100%;	
 }
 
 p {
 	font-size: 24px;
-	color: gray;
+	color: #d3d3d3;
 	text-align: justify;
 	vertical-align: middle;
 }
@@ -16,17 +17,8 @@ h1 {
 	text-align: center;
 }
 
-section {
-	padding: 5%;
-	margin: 0;	
-}
-
 img {
 	display: inline-block;
-}
-
-div.row > div {
-	padding-bottom: 5%;
 }
 
 label {
@@ -48,12 +40,12 @@ div#menu-itens {
 	text-align: right;
 }
 
-img#logo {
+#logo {
 	padding-bottom: 5%; 
 }
 
 /* Sobre */
-section#sobre {
+#sobre {
 	padding-top: 25%;	
 }
 
@@ -71,15 +63,16 @@ section#sobre {
 }
 
 /* Portfolio */
-section#portfolio {
+#portfolio {
 	background-image: url("../img/black-background.jpg");
-	width: 100%;
+	width: 100%; 
+	padding: 0 5%;
 }
 
 img.port-img {	
 	width: 100%;
 	height: 100%;
-	padding: 2%;
+	padding: 5%;
 }
 
 figcaption.port-caption {
@@ -87,28 +80,37 @@ figcaption.port-caption {
 }
 
 /* Contato */
-section#contato {
+#contato {
 	background-image: url("../img/black-background.jpg");
 	width: 100%;
 }
 
+#contato-email {
+	font-size: 2rem;
+}
+
 .form {
 	width: 100%;
+	margin-bottom: 5%;
 }
-/*
-div.form>textarea {
-	width: 100%;
-}
-*/
-div.form>input {
+
+.form > input {
 	text-align: center;
 	
+}
+
+#form-submit {
+	height: 20%;
 }
 
 .btn-linkedin {
 	background-color: #0077B5;
 	color: #fff;
  	border-color: #2e6da4;
+}
+
+#social-title {
+	display: none;
 }
 
 /* Rodape */
@@ -122,4 +124,66 @@ footer > div {
 	font-size: 10pt;
 	color: #fff;
 	text-align: center;
+}
+
+
+@media screen and (min-width: 768px) {
+	p {
+		font-size: 28px;
+	}	
+
+	#sobre {
+		padding-top: 15%;
+	}
+
+	#sobre-photo {
+		height: 25%;	
+	}
+
+	.row-icon {
+		font-size: 10rem;
+	}
+
+	#portfolio > div {
+		padding: 0 5%;
+		margin-left: -5%;
+		margin-right: 5%;
+	}
+
+	#contato-email {
+		font-size: 5rem;
+	}
+
+	.form {
+		margin-bottom: 2%;
+	}
+
+	#contato-social {
+		padding-bottom: 5%;
+	}	
+
+	i.fa-facebook-official:after {
+		content: " Facebook";
+		font: bold 1.5rem Arial, sans-serif;
+	}
+
+	i.fa-linkedin:after {
+		content: " Linkedin";
+		font: bold 1.5rem Arial, sans-serif;
+	}
+
+	i.fa-github:after {
+		content: " Github";
+		font: bold 1.5rem Arial, sans-serif;
+	}
+
+	i.fa-free-code-camp:after {
+		content: " FreeCodeCamp";
+		font: bold 1.5rem Arial, sans-serif;
+	}
+
+	#social-title {
+		display: block;
+		padding-bottom: 5%;
+	}
 }

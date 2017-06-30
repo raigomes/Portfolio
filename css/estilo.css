@@ -1,6 +1,6 @@
 
 body {
-	background-image: url("../img/grunge-background.jpg");
+	background-color: #000;
 	width: 100%;	
 }
 
@@ -11,8 +11,7 @@ p {
 	vertical-align: middle;
 }
 
-h1 {
-	color: #fff !important;
+h1 {	
 	font-weight: bold !important;
 	text-align: center;
 }
@@ -22,7 +21,7 @@ img {
 }
 
 label {
-	color: #fff;
+	color: #666;
 }
 
 /* Menu */
@@ -46,6 +45,7 @@ div#menu-itens {
 
 /* Sobre */
 #sobre {
+	background-image: url("../img/grunge-background.jpg");
 	padding-top: 25%;	
 }
 
@@ -66,7 +66,8 @@ div#menu-itens {
 #portfolio {
 	background-image: url("../img/black-background.jpg");
 	width: 100%; 
-	padding: 0 5%;
+	padding: 2% 5% 0;
+	color: #fff;
 }
 
 img.port-img {	
@@ -81,13 +82,20 @@ figcaption.port-caption {
 
 /* Contato */
 #contato {
-	background-image: url("../img/black-background.jpg");
+	background-color: #eee;
 	width: 100%;
+	padding: 5% 0;
+}
+
+h1 + hr {
+	border-color: #666;
+	padding-bottom: 5%;
 }
 
 #contato-email {
 	font-size: 2rem;
 }
+
 
 .form {
 	width: 100%;
@@ -114,16 +122,15 @@ figcaption.port-caption {
 }
 
 /* Rodape */
-footer > div {
+footer {
 	padding-top: 2%;
 	background-color: #000;		
-	color: #fff;	
+	color: #fff;
+	width: 100%;
 }
 
 .rodape {
-	font-size: 10pt;
-	color: #fff;
-	text-align: center;
+	font-size: 10pt;	
 }
 
 
@@ -151,7 +158,7 @@ footer > div {
 	}
 
 	#contato-email {
-		font-size: 5rem;
+		font-size: 3rem;
 	}
 
 	.form {
@@ -184,6 +191,6 @@ footer > div {
 
 	#social-title {
 		display: block;
-		padding-bottom: 5%;
+		padding-top: 5%;
 	}
 }

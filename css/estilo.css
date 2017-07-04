@@ -66,8 +66,12 @@ div#menu-itens {
 #portfolio {
 	background-image: url("../img/black-background.jpg");
 	width: 100%; 
-	padding: 2% 5% 0;
+	padding: 2% 0;
 	color: #fff;
+}
+
+#portfolio > div {
+	padding: 0 5%;
 }
 
 img.port-img {	
@@ -149,12 +153,6 @@ footer {
 
 	.row-icon {
 		font-size: 10rem;
-	}
-
-	#portfolio > div {
-		padding: 0 5%;
-		margin-left: -5%;
-		margin-right: 5%;
 	}
 
 	#contato-email {

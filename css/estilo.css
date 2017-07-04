@@ -133,6 +133,10 @@ h1 + hr {
 	display: none;
 }
 
+#social-button {
+	padding-left: 10%;
+}
+
 /* Rodape */
 footer {
 	padding-top: 2%;
@@ -182,22 +186,27 @@ footer {
 
 	i.fa-facebook-official:after {
 		content: " Facebook";
-		font: bold 1.5rem Arial, sans-serif;
+		font: bold 1.5rem 'Open Sans', sans-serif;
 	}
 
 	i.fa-linkedin:after {
 		content: " Linkedin";
-		font: bold 1.5rem Arial, sans-serif;
+		font: bold 1.5rem 'Open Sans', sans-serif;
 	}
 
 	i.fa-github:after {
 		content: " Github";
-		font: bold 1.5rem Arial, sans-serif;
+		font: bold 1.5rem 'Open Sans', sans-serif;
+	}
+
+	i.fa-codepen:after {
+		content: " Codepen";
+		font: bold 1.5rem 'Open Sans', sans-serif;
 	}
 
 	i.fa-free-code-camp:after {
 		content: " FreeCodeCamp";
-		font: bold 1.5rem Arial, sans-serif;
+		font: bold 1.5rem 'Open Sans', sans-serif;
 	}
 
 	#social-title {

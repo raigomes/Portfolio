@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	carregaImagensLocais();
+	//carregaImagensLocais();
 	//carregaPortfolio();
 });
 
@@ -34,10 +34,13 @@ function carregaEmail() {
 		console.log(url);
 		window.open(url);
 
+		limpaCamposForm(answer);
+
+		alert("Dados enviados para seu cliente de email");
 	}
 	else {
 		alert("Preencha os campos corretamente");
-	}
+	}	
 	
 }
 
@@ -59,4 +62,10 @@ function normalizaEmail(email) {
 
 function substituiCaracteresEspeciais(text) {
 	return encodeURIComponent(text);
+}
+
+function limpaCamposForm(campos) {
+	for (var i = campos.length - 2; i >= 0; i--) {
+		campos[i].value = '';
+	}
 }

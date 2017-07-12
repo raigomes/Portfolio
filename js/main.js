@@ -28,39 +28,71 @@ function carregaPortfolio() {
 function buscaNovoPortfolio() {
 	var jobs = buscaNovoPortfolioRequest();
 
-	if(jobs === null || jobs.length == 0) {
+	console.log(jobs);
+
+	if(jobs == null || jobs.length == 0) {
+		console.log("entrou");
 		return "";
 	}
 	else{
 		var count = 1;
 
-		/*return `<h1>Portfolio</h1><hr>
+		return `<h1>Portfolio</h1><hr>
 				<div class="container">
 					<div class="row">
-						${jobs.map(job => ${makeJobDiv(jobs, count++)})}
+						${jobs.map(job => makeJobDiv(job, count++))}
 					</div>
 				</div>
 				`;
-		S*/
 	}
 }
 
-function makeJobDiv(jobs, id) {
+function makeJobDiv(job, id) {
+	//console.log(job);
 	return `<div id="port${id}" class="col-xs-12 col-sm-6 col-md-3">
-					<div class="thumbnail"><a href=${jobs.url}>
+					<div class="thumbnail"><a href=${job.url}>
 						<figure class="figure">
-							<img src=${jobs.imageUrl} alt="" class="figure-img img-fluid port-img" id="port-img-1">
-							<figcaption class="figure-caption port-caption">${jobs.titulo}</figcaption>
+							<img src=${job.imageUrl} alt="" class="figure-img img-fluid port-img" id="port-img-1">
+							<figcaption class="figure-caption port-caption">${job.titulo}</figcaption>
 						</figure>
 					</a></div>
 				</div>`;
 }
 
 function buscaNovoPortfolioRequest() {
-	return [`{  
-         "id": 1,
-         "titulo": "Tribute Page",
-         "url": "https://codepen.io/raigomes/pen/BpVpxr",
-         "imageUrl": "https://c2.staticflickr.com/4/3689/10613180113_fdf7bcd316_b.jpg"
-      }`];
+	var url = "../Portfolio%20Page/data/portfolio.json";
+	var method = "GET";
+
+	return getJSONData(url, method);
+}
+
+function getJSONData(url, httpMethod) {
+	var request = new XMLHttpRequest();	
+	var response;
+
+	request.open(httpMethod, url, true);
+
+	request.onload = function() {		
+		if(request.status >= 200 && request.status < 400) {
+			console.log("SUCCESS: " + request.status);
+			response = JSON.parse(request.responseText);
+		}
+		else {
+			console.log("Erro no AJAX: StatusCode = " + request.status);	
+			response = null;
+		}
+
+		console.log(response);
+		return response;
+	};
+
+	request.onerror = function() {
+		console.log("Erro geral: StatusCode = " + request.status);		
+
+		return null;
+	};
+
+	request.send();
+
+	//return response;
 }

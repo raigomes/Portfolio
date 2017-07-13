@@ -1,3 +1,5 @@
+const numeroDeJobs = 4;
+
 $(document).ready(function() {
 	//carregaImagensLocais();
 	carregaPortfolio();
@@ -28,35 +30,58 @@ function carregaPortfolio() {
 function buscaNovoPortfolio() {
 	var jobs = buscaNovoPortfolioRequest();
 
-	console.log(jobs);
-
 	if(jobs == null || jobs.length == 0) {
-		console.log("entrou");
 		return "";
 	}
-	else{
-		var count = 1;
+	else{		
 
 		return `<h1>Portfolio</h1><hr>
 				<div class="container">
 					<div class="row">
-						${jobs.map(job => makeJobDiv(job, count++))}
+						${criaListaDeJobs(jobs)}
 					</div>
 				</div>
 				`;
 	}
 }
 
-function makeJobDiv(job, id) {
-	//console.log(job);
-	return `<div id="port${id}" class="col-xs-12 col-sm-6 col-md-3">
+function criaListaDeJobs(jobs) {
+	var answer = "";
+
+	for (var id = 0; id < numeroDeJobs; id++) {
+		var job = (id < jobs.portfolio.length) ? jobs.portfolio[id] : null;
+
+		job = insereValoresDefault(job, id);
+
+		answer += `<div id="port${id}" class="col-xs-12 col-sm-6 col-md-3">
 					<div class="thumbnail"><a href=${job.url}>
 						<figure class="figure">
-							<img src=${job.imageUrl} alt="" class="figure-img img-fluid port-img" id="port-img-1">
+							<img src=${job.imageUrl} alt="${job.titulo}" class="figure-img img-fluid port-img" id="port-img-1">
 							<figcaption class="figure-caption port-caption">${job.titulo}</figcaption>
 						</figure>
 					</a></div>
-				</div>`;
+				</div>
+				`
+	}
+
+	return answer;
+}
+
+function insereValoresDefault(job, id) {
+	var obj = new Object();
+
+	console.log("INPUT");
+	console.log(job);
+
+	obj.id = id;
+	obj.titulo = (job == null || job.titulo == "") ? "Coming soon :)" : job.titulo;
+	obj.url = (job == null || job.url == "") ? "https://github.com/raigomes" : job.url;
+	obj.imageUrl = (job == null || job.imageUrl == "") ? "http://imageshack.com/a/img923/9206/KnZIEc.png" : job.imageUrl;
+
+	console.log("OUTPUT");
+	console.log(obj);
+
+	return obj;
 }
 
 function buscaNovoPortfolioRequest() {
@@ -68,9 +93,7 @@ function buscaNovoPortfolioRequest() {
 
 function getJSONData(url, httpMethod) {
 	var request = new XMLHttpRequest();	
-	var response;
-
-	request.open(httpMethod, url, true);
+	var response;		
 
 	request.onload = function() {		
 		if(request.status >= 200 && request.status < 400) {
@@ -78,21 +101,21 @@ function getJSONData(url, httpMethod) {
 			response = JSON.parse(request.responseText);
 		}
 		else {
-			console.log("Erro no AJAX: StatusCode = " + request.status);	
+			console.log("Erro no AJAX: StatusCode = " + request.status);
 			response = null;
 		}
 
-		console.log(response);
-		return response;
 	};
 
 	request.onerror = function() {
-		console.log("Erro geral: StatusCode = " + request.status);		
+		console.log("Erro geral: StatusCode = " + request.status);				
 
-		return null;
-	};
+		response = null;		
+	};	
+
+	request.open(httpMethod, url, false);
 
 	request.send();
 
-	//return response;
+	return response;
 }

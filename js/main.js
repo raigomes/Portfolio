@@ -88,7 +88,8 @@ var controladorPortfolio = (
 		}
 
 		function buscaNovoPortfolioRequest() {
-			var url = "../Portfolio%20Page/data/portfolio.json";
+			//var url = "../Portfolio%20Page/data/portfolio.json";
+			var url = "https://codepen.io/raigomes/pen/JJqWpL.js";
 			var method = "GET";
 
 			return getJSONData(url, method);

@@ -79,7 +79,7 @@ div#menu-itens {
 }
 
 #portfolio > div {
-	padding: 0 5%;
+	padding: 0 5%;	
 }
 
 img.port-img {	
@@ -90,6 +90,10 @@ img.port-img {
 
 figcaption.port-caption {
 	text-align: center;	
+}
+
+.selected {
+	background-color: #bebebe !important;	
 }
 
 /* Contato */

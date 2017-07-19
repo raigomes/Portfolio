@@ -10,7 +10,8 @@ var controladorPortfolio = (
 			var newPort = buscaNovoPortfolio();
 
 			if(newPort != "") {
-				portfolio.innerHTML = newPort;		
+				portfolio.innerHTML = newPort;				
+				//$(".thumbnail").mouseover(function(){$(".thumbnail").css("background-color", "black"); });
 			}
 		}
 
@@ -40,7 +41,10 @@ var controladorPortfolio = (
 
 				job = insereValoresDefault(job, id);
 
-				answer += `<div id="port${id}" class="col-xs-12 col-sm-6 col-md-3" onmouseover="changePortfolioColor(this);">
+				answer += `
+				<div id="port${id}" class="port col-xs-12 col-sm-6 col-md-3" 
+				onmouseover="controladorPortfolio.changePortfolioColor('#port${id} div');"
+				onmouseout="controladorPortfolio.changePortfolioColor('#port${id} div');">
 				<div class="thumbnail"><a href=${job.url}>
 				<figure class="figure">
 				<img src=${job.imageUrl} alt="${job.titulo}" class="figure-img img-fluid port-img" id="port-img-1">
@@ -48,14 +52,14 @@ var controladorPortfolio = (
 				</figure>
 				</a></div>
 				</div>
-				`
-			}
+				`				
+			}			
 
 			return answer;
 		}
 
-		function changePortfolioColor(obj) {
-			obj.style.backgroundColor = 'black';
+		function changePortfolioColor(seletor) {
+			$(seletor).toggleClass("selected");
 		}
 
 		function insereValoresDefault(job, id) {
@@ -70,7 +74,8 @@ var controladorPortfolio = (
 		}
 
 		function buscaNovoPortfolioRequest() {
-			var url = "../Portfolio%20Page/data/portfolio.json";
+			//var url = "../Portfolio%20Page/data/portfolio.json";
+			var url = "https://codepen.io/raigomes/pen/JJqWpL.js";
 			var method = "GET";
 
 			return getJSONData(url, method);
@@ -103,11 +108,11 @@ var controladorPortfolio = (
 			request.send();
 
 			return response;
-	
 		}
 
 		return {
-			carregaPortfolio: carregaPortfolio
+			carregaPortfolio: carregaPortfolio,
+			changePortfolioColor: changePortfolioColor
 		}
 	}
 )();
